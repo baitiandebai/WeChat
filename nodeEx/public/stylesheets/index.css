@@ -1,0 +1,17 @@
+#total{width:100%;height: 100%;background: #000;display: none;position: absolute;top:0;left: 0;
+	filter:alpha(opacity=50); /*支持 IE 浏览器*/
+	-moz-opacity:0.50; /*支持 FireFox 浏览器*/
+	opacity:0.50; /*支持 Chrome, Opera, Safari 等浏览器*/
+	background:url("/images/001.jpg");}
+#move{background:#fff;width:700px;height:600px;position: absolute;display: none;z-index: 99;
+	left:600px;top:180px;}
+#skip{width:80px;height:40px;cursor: pointer;background:skyblue;border-radius: 3px;margin:0 auto;
+	color:#fff;line-height: 40px;text-align: center;}
+.top{width:100%;height:5%;line-height:25px;text-align: center;}
+.middle{width:100%;height: 65%;}
+.middle #info{width:97%;height:100%;margin:0 auto;border-bottom: 1px solid #000;border-top: 1px solid #000; overflow: auto;}
+.bottom{margin-top:5px;}
+.bottom .send{width:60px;height:25px;color:#fff;background:skyblue;margin-top:5px;float:right;margin-right: 10px;
+	text-align: center;line-height: 25px;font-size: 14px;cursor: pointer;border-radius: 3px;}
+.bottom .send:hover{background:blue;cursor: pointer;}
+.bottom .text{height:140px;width:97%;margin:0 auto;outline: none;}
