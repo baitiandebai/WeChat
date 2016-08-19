@@ -3,6 +3,7 @@ var io = require('socket.io')();
 io.on('connection',function(_socket){
 	_socket.emit('message','success');
 	_socket.on('send',function(msg){
+		console.log(msg.nickname);
 		io.sockets.emit('resend',msg);
 	})
 });

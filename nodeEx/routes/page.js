@@ -11,6 +11,11 @@ module.exports = function(){
 		});
 	}
 
-
-
+	this.getAll = function(callback){
+		var db = new DB();
+		var data = {};
+		db.read(data,function(result){
+			callback(result);
+		});
+	}
 }

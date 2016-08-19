@@ -1,11 +1,20 @@
 var Page = require('./page');
 
+
 module.exports = function(app){
 	app.get('/effort/login',function(req,res){
 		res.render('login');
 	});
 	app.get('/effort/index',function(req,res){
-		res.render('index');
+		var user = req.session.user;
+		var page = new Page();
+		page.getAll(function(result){
+			res.render('index',{"nickname":user.nickname,"path":user.path,"result":result});
+		});
+		var s = JSON.stringify(req.session.user);
+		console.log("user的全职是:" + user);
+		console.log("user中的昵称是" + user.nickname + user.path);
+		
 	});
 	app.post('/post',function(req,res){
 		
@@ -13,15 +22,12 @@ module.exports = function(app){
 		var password = req.body['password'];
 		var page = new Page();
 		var message = page.check(username,password,function(result){
-			console.log("返回的结果是index:" + result);
 			if(result != "false"){
-				console.log("返回正确了");
+				req.session.user = result[0];
 				res.json({success:"true"});
 			}else{
-				console.log("返回错误的结果");
 				res.json({success:"false"});
 			}
-
 		});
 	});
 }
