@@ -35,7 +35,6 @@ function skip(nickname,path){
     var $move = document.getElementById("move");
     $move.style.display="block";
     $(".top").text(nickname);
-    $("#path").text(path);
 }
 $(function(){
     var socket = io.connect('http://localhost:3000/');
@@ -78,11 +77,12 @@ $(function(){
             
         }
     );
-    socket.on('resend',function(data){
-
+    var oneself = $("#oneself").text();
+    alert(oneself);
+    socket.on('resend123' + oneself,function(data){
          appendBubble_left(data.msg,data.path,data.nickname);
-       
     });
+
 });
 
 function appendBubble_left(data,imgPath,nickname){

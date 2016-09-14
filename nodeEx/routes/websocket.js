@@ -4,7 +4,7 @@ io.on('connection',function(_socket){
 	_socket.emit('message','success');
 	_socket.on('send',function(msg){
 		console.log(msg.nickname);
-		io.sockets.emit('resend',msg);
+		io.sockets.emit('resend123',msg);
 	})
 });
 

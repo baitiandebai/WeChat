@@ -11,10 +11,6 @@ module.exports = function(app){
 		page.getAll(function(result){
 			res.render('index',{"nickname":user.nickname,"path":user.path,"result":result});
 		});
-		var s = JSON.stringify(req.session.user);
-		console.log("user的全职是:" + user);
-		console.log("user中的昵称是" + user.nickname + user.path);
-		
 	});
 	app.post('/post',function(req,res){
 		
