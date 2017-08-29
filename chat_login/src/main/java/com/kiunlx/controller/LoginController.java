@@ -21,7 +21,6 @@ public class LoginController {
 	public Result login(){
 
 		loginService.insertUser(new User());
-		
 		return Result.getResult("成功");
 	}
 	
